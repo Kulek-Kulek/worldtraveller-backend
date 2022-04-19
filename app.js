@@ -49,7 +49,7 @@ app.use((error, req, res, next) => {
 
 mongoose.connect(urlDB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        app.listen(5000);
+        app.listen(process.env.PORT || 5000);
         console.log('Database connection established. Application is running.');
     })
     .catch(err => {
